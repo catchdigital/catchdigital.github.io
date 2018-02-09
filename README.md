@@ -1,3 +1,3 @@
 # la-devs
 
-Don't take it srsly... 🤔
+Please don't take it srsly... 🤔
