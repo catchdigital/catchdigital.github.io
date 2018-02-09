@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+
+  <style>
+    html {
+      font-size: 18px;
+    }
+
+    body {
+      margin: 0;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .header {
+      position: relative;
+      padding: 2rem;
+      background-color: #7d1e27;
+      min-width: 800px;
+    }
+    .header:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("http://www.paulbraytondesigns.com/images/textile/Almost/ACL_320.jpg");
+      opacity: .2;
+    }
+    .header span {
+      color: gold;
+      font-size: 4rem;
+      font-family: serif;
+      text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .header button {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      padding: 1rem;
+      border: 0;
+      background-color: transparent;
+      color: green;
+      font: inherit;
+    }
+    .header div {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: 300px;
+      padding: 2rem;
+      background: url("https://cdn.eyeem.com/thumb/51f7b246b27795a22fec82d7b7a37c1dc3d7b315-1467401098452/w/1280");
+    }
+    .header ul {
+      list-style-type: square;
+      color: white;
+    }
+    .header a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    .header + img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .menu {
+      background-color: #ddd;
+    }
+
+    .team {
+      background-color: #ccc;
+    }
+
+    .footer {
+      text-align: center;
+    }
+    .footer .top {
+      background: #e1e1e1;
+      width: 60px;
+      height: 60px;
+      line-height: 2em;
+      text-align: center;
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+    }
+    .footer .copyright {
+      -webkit-animation: blinker 1s linear infinite;
+              animation: blinker 1s linear infinite;
+    }
+    .footer img {
+      width: 100%;
+    }
+    @-webkit-keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    .container {
+      width: 860px;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+  <body>
+  <header class="header" id="page-top">
+    <span>La Dev's</span>
+    <button data-button="">View menu</button>
+    <div>
+      <ul>
+        <li><a data-button="" href="#0">Menu</a></li>
+        <li>Add more links here</li>
+      </ul>
+    </div>
+  </header>
+  <img src="/media/resto.jpg">
+
+  <section class="menu">
+    Menu here
+  </section>
+
+  <section class="team">
+    <h2>The team</h2>
+    <div class="container">
+      <h3>Mmmm...</h3>
+      <iframe src="https://giphy.com/embed/7cByCwKMbILLi" width="680" height="270" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+    </div>
+    <img src="/media/team.png">
+  </section>
+
+  <footer class="footer">
+    <a href="#page-top"><div class="top">top ^</div></a><a>
+    <img src="/media/foot.jpg" alt="Footer foot">
+    </a><p class="copyright"><a>© 2008 </a><a href="https://www.catchdigital.com">Catch Digital dev team</a> For more information, contact none of us! :)</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $('[data-button]').on('click', function(e) {
+      e.preventDefault();
+      $('.header div').slideToggle();
+
+      if (e.target.type === 'submit') {
+        $(this).text('Hide menu');
+      }
+
+      console.log('Todo: Implement carousel');
+    });
+  </script>
+</body>
+</html>
