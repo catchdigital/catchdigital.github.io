@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
 
+
   <style>
     html {
       font-size: 18px;
@@ -78,6 +79,21 @@
 
     .menu {
       background-color: #ddd;
+      width: 100%;
+    }
+
+    .menu .col-1 {
+      float: left;
+      width: 25%;
+      padding: 0 1em;
+    }
+
+    .menu .col-3 {
+      width: 75%;
+    }
+
+    .menu .flag {
+      max-width: 100%;
     }
 
     .team {
@@ -116,15 +132,29 @@
       }
     }
     .container {
-      width: 860px;
+      max-width: 1200px;
       margin: auto;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .text-center {
       text-align: center;
+    }
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 
   <body>
-  <header class="header" id="page-top">
+  <header class="header" id="page-top" data-play-sound="welcome">
     <span>La Dev's</span>
     <button data-button="">View menu</button>
     <div>
@@ -134,26 +164,117 @@
       </ul>
     </div>
   </header>
-  <img src="/media/resto.jpg">
+  <img src="/media/resto.jpg" data-play-sound="welcome">
 
   <section class="menu">
-    Menu here
+    <div class="container">
+
+    <p>What follows is a <del>terrible</del> electic mix of food from around the world. Please hold your tongues (and your noses) as we dive into a veritable taste sensation that is sure to <b><i>develop</i></b> the tastebuds of even the most cynical diner.</p>
+
+      <div class="dish clearfix" data-play-sound="pallela">
+        <h2>Spain</h2>
+        <div class="col-1">
+          <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/es.svg" alt="Spain Flag">
+        </div>
+        <div class="col-3">
+          <h3>Paella + Tapas</h3>
+          <p>Brought to you in a container, this Spanish classic won't disappoint. <!--insert ingredients here--> </p>
+           <p><sub> Disclaimer: This dish is whale free </sub></p>
+        </div>
+      </div>
+
+      <div class="dish clearfix" data-play-sound="cheesecake">
+        <h2>UK</h2>
+        <div class="col-1">
+          <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="United Kingdom Flag">
+        </div>
+        <div class="col-3">
+         <h3>Baked Blueberry Cheesecake with Blueberry Compote</h3>
+          <p>A delightful medley of cheese, cake and blueberries finished with a <strong>berry</strong> good sauce. </p>
+          <p><i><small>Stem Ginger, Gluten Free Vegan biscuits are also available for the slightly more fussy diner. </small></i></p>
+        </div>
+      </div>
+
+      <div class="dish clearfix" data-play-sound="banitsa">
+        <h2>Bulgaria</h2>
+        <div class="col-1">
+          <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/bg.svg" alt="Bulgaria Flag">
+        </div>
+        <div class="col-3">
+          <h3>Banitsa</h3>
+          <p style='font-size: 18px;'>Баница традиционно българско ястие, състоящо се от яйца, кисело мляко, сирене, кори, краве масло и сода бикарбонат. Може да се поднесе на закуска с айрян, както и за обяд.</p>
+          <p style='font-size: 16px;font-weight: bold;'><i>Подходящо е за вегетарианци.</i></p>
+        </div>
+      </div>
+
+      <div class="dish clearfix">
+        <h2>Greggs</h2>
+        <div class="col-1">
+          <img class="flag" src="https://www.greggs.co.uk/res/img/greggs_facebook_share.jpg" alt="Bulgaria Flag">
+        </div>
+        <div class="col-3">
+          <h3>Savoury Snack Selection</h3>
+          <p>A range of the finest delicacies suitable for any and all palates made by Greggs' up and coming <a href="https://imgur.com/a/bMQ10">sister store</a>.</p>
+        </div>
+      </div>
+
+      <div class="dish clearfix">
+        <h2>Mexico</h2>
+        <div class="col-1">
+          <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/mx.svg" alt="Mexico Flag">
+        </div>
+        <div class="col-3">
+          <h3>"Tex-Liam" Fajitas</h3>
+          <p>It's often said that when life gives you lemons, make lemonade. If you don't have any to hand just maybe make like, Fajitas instead? <small> everyone likes fajitas right...</small> </p>
+        </div>
+      </div>
+      <div class="dish clearfix" data-play-sound="salad">
+      <h2>France</h2>
+      <div class="col-1">
+        <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="France Flag">
+      </div>
+      <div class="col-3">
+        <h3>
+  Beaucoup de salades Vertes</h3>
+        <p>A trio of salads with something for everyone. Puy Lentil, Cantal Cheese and a #0000FF cheese Auvergnat salad.</p>
+        </div>
+      </div>
+
+      <div class="dish clearfix">
+        <h2>Hertford</h2>
+        <div class="col-1">
+          <img class="flag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/County_Flag_of_Hertfordshire.svg/1200px-County_Flag_of_Hertfordshire.svg.png" alt="France Flag">
+        </div>
+        <div class="col-3">
+          <h3>Mocktails</h3>
+          <p>Cocktails devised by a seasoned professional. Not only has he seen the movie "Cocktail" at least 7 times, he also worked in a bar for a bit, apparently. Check out his front-end work: <i>Customise</i> a "node-jito" or <i>commit</i> to a "St Kitts". </p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <section class="team">
     <h2>The team</h2>
-    <div class="container">
+    <div class="container text-center">
       <h3>Mmmm...</h3>
       <iframe src="https://giphy.com/embed/7cByCwKMbILLi" width="680" height="270" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
     </div>
     <img src="/media/team.png">
   </section>
 
-  <footer class="footer">
+  <footer class="footer" data-play-sound="bye">
     <a href="#page-top"><div class="top">top ^</div></a><a>
     <img src="/media/foot.jpg" alt="Footer foot">
     </a><p class="copyright"><a>© 2008 </a><a href="https://www.catchdigital.com">Catch Digital dev team</a> For more information, contact none of us! :)</p>
   </footer>
+
+  <audio preload="auto" src="/media/welcome.mp3" data-sound="welcome"></audio>
+  <audio preload="auto" src="/media/bye.mp3" data-sound="bye"></audio>
+  <audio preload="auto" src="/media/banitsa.mp3" data-sound="banitsa"></audio>
+  <audio preload="auto" src="/media/salad.mp3" data-sound="salad"></audio>
+  <audio preload="auto" src="/media/pallela.mp3" data-sound="pallela"></audio>
+  <audio preload="auto" src="/media/cheesecake.mp3" data-sound="cheesecake"></audio>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
@@ -166,6 +287,23 @@
       }
 
       console.log('Todo: Implement carousel');
+    });
+
+    console.log($('[data-play-sound]'));
+
+    $('[data-play-sound]').on('mouseover', function(e) {
+      var $target = $('[data-sound="' + $(this).attr('data-play-sound') + '"]');
+
+      $('audio').each(function() {
+        $(this)[0].pause();
+      });
+
+      $target[0].play();
+    }).on('mouseout', function(e) {
+      var $target = $('[data-sound="' + $(this).attr('data-play-sound') + '"]');
+
+      $target[0].pause();
+      $target[0].currentTime = 0;
     });
   </script>
 </body>
