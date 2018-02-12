@@ -150,6 +150,12 @@
     audio {
       display: none;
     }
+
+    .meme {
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -263,6 +269,9 @@
     <img src="/media/team.png">
   </section>
 
+  <h2>GIFs</h2>
+  <section class="meme"></section>
+
   <footer class="footer" data-play-sound="bye">
     <a href="#page-top"><div class="top">top ^</div></a><a>
     <img src="/media/foot.jpg" alt="Footer foot">
@@ -305,6 +314,28 @@
       $target[0].pause();
       $target[0].currentTime = 0;
     });
+
+    var key = 'FYVRx0kYviNYDNnaDZekLAAtPIT7nZfA';
+    var url = 'https://api.giphy.com/v1/gifs/random?api_key='+key+'&tag=&rating=R';
+
+    var $meme = $('.meme');
+
+    var width = $meme.width();
+    var height = $meme.height();
+
+    for (var i = 1; i < 50; i++)  {
+      getMeme(i);
+    }
+
+    function getMeme(number) {
+      setTimeout(function() {
+        $.get(url, function(response) {
+          var top = Math.random() * height;
+          var left = Math.random() * width;
+      $meme.append('<img src="'+response.data.image_url+'" style="position: absolute; top:'+top+'px; left: '+left+'px; width: 200px; "/>')
+        });
+      }, number * 200);
+    }
   </script>
 </body>
 </html>
